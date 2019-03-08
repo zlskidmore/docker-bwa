@@ -1,5 +1,5 @@
 # work from latest LTS ubuntu release
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 # set the environment variables
 ENV bwa_version 0.7.17
@@ -9,7 +9,10 @@ RUN apt-get update -y && apt-get install -y \
     build-essential \
     libz-dev \
     unzip \
-    curl
+    curl \
+    libnss-sss \
+    vim \
+    less
 
 # download bwa
 WORKDIR /usr/local/bin/
